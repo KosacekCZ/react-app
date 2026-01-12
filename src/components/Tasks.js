@@ -2,7 +2,7 @@ import Task from './Task';
 
 function Tasks({tasks, Delete}) {
     return (
-        <div className="rounded-3 p-3 shadow-sm">
+        <div className="rounded-3 p-3">
             {tasks.map((task) => (
                 <Task key={task.id} Name={task.name} Description={task.description} Id={task.id} Delete={Delete} />
             ))}
