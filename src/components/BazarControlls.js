@@ -1,3 +1,4 @@
+import {Link} from "react-router";
 
 function BazarControlls({props}) {
     return (
@@ -8,7 +9,7 @@ function BazarControlls({props}) {
                 <input type="number" id="priceHigh" placeholder="Cena do" className="form-control"/>
                 <input type="submit" value="Vyhledat" className="btn btn-primary"/>
             </form>
-            <a href="" className="btn btn-primary">Přidat inzerát</a>
+            <Link to="/newListing" className="btn btn-primary">Přidat inzerát</Link>
         </div>
     )
 }

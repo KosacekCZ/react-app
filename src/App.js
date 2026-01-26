@@ -1,8 +1,9 @@
 import {useState, useEffect} from "react";
 import BazarControlls from "./components/BazarControlls";
-import Home from "./pages/Home";
+import AllListings from "./pages/AllListings"
 
 import {Link, Routes, Route, Router} from "react-router";
+import NewListing from "./pages/NewListing";
 
 function App() {
     return (
@@ -17,7 +18,8 @@ function App() {
             <BazarControlls />
 
                 <Routes>
-                    <Route path="/" element={<Home />}/>
+                    <Route path="/" element={<AllListings />}/>
+                    <Route path="/newListing" element={<NewListing />}/>
                 </Routes>
         </article>
     )
