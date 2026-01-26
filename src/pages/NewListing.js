@@ -1,5 +1,5 @@
 
-function NewListing(props) {
+function NewListing({OnCreate}) {
     return (
         <h1>Nový inzerát</h1>
     )

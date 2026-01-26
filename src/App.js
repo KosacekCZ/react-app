@@ -4,8 +4,31 @@ import AllListings from "./pages/AllListings"
 
 import {Link, Routes, Route, Router} from "react-router";
 import NewListing from "./pages/NewListing";
+import Listing from "./components/Listing";
 
 function App() {
+    const [listings, addListing] = useState([
+        {
+            ID:1,
+            Name:"Stará pračka",
+            ImageLink:"https://www.bazos.cz/img/1/193/214058193.jpg",
+            Description:"Nefunguje",
+            Price:2499,
+            Email:"adam.novak@yandex.ru"
+        },
+        {
+            ID:2,
+            Name:"Nová pračka",
+            ImageLink:"https://www.bazos.cz/img/1/413/214038413.jpg?t=1769344028",
+            Description:"Nefunguje (jen trochu)",
+            Price:2899,
+            Email:"adam.novak@yandex.ru"
+        }
+    ])
+
+    const newListing = () => {
+
+    }
     return (
         <article className="container">
             <nav className="d-flex align-items-center">
@@ -18,7 +41,7 @@ function App() {
             <BazarControlls />
 
                 <Routes>
-                    <Route path="/" element={<AllListings />}/>
+                    <Route path="/" element={<AllListings Listings={listings}/>}/>
                     <Route path="/newListing" element={<NewListing />}/>
                 </Routes>
         </article>
