@@ -26,9 +26,12 @@ function App() {
         }
     ])
 
-    const newListing = () => {
-
+    const newListing = (listing) => {
+        // Přidá nový objekt do useState pole, ... rozbaluje pole aby šel jeho obsah použít jako série objektů, ne jako celé pole
+        // [listings, listing] ---> [[],listing] | [...listings, listing] ---> [listing1, listing2, listing]
+        addListing([...listings, listing])
     }
+
     return (
         <article className="container">
             <nav className="d-flex align-items-center">
