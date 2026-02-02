@@ -29,7 +29,11 @@ function App() {
     const newListing = (listing) => {
         // Přidá nový objekt do useState pole, ... rozbaluje pole aby šel jeho obsah použít jako série objektů, ne jako celé pole
         // [listings, listing] ---> [[],listing] | [...listings, listing] ---> [listing1, listing2, listing]
+        listing.ID = Math.max(...listings.map(l => l.ID)) + 1
         addListing([...listings, listing])
+
+        console.log(listing)
+        console.log(listings)
     }
 
     return (
@@ -44,12 +48,11 @@ function App() {
             <BazarControlls />
 
                 <Routes>
-                    <Route path="/" element={<AllListings Listings={listings}/>}/>
-                    <Route path="/newListing" element={<NewListing />}/>
+                    <Route path="/" element={<AllListings ListingsArray={listings}/>}/>
+                    <Route path="/newListing" element={<NewListing OnCreate={newListing}/>}/>
                 </Routes>
         </article>
     )
-
 }
 
 export default App;

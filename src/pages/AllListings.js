@@ -2,14 +2,12 @@ import {useState, useEffect} from "react";
 import Listing from "../components/Listing";
 
 
-function AllListings({Listings}) {
-
-
-
+function AllListings({ListingsArray}) {
     return(
        <div>
-           {Listings.map((listing) => (
+           {ListingsArray.map((listing) => (
                 <Listing ID={listing.ID}
+                         key={listing.ID}
                          Name={listing.Name}
                          ImageLink={listing.ImageLink}
                          Description={listing.Description}
